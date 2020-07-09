@@ -133,10 +133,8 @@ func main() {
 				continue
 			}
 			// No measurement otherwise
-			fmt.Printf("no recent measurement found. zeroing\n")
+			fmt.Printf("no recent measurement found. zeroing battery\n")
 			batteryLevel.Set(0.0)
-			ambientTemp.Set(0.0)
-			lightLevel.Set(0.0)
 		}
 	}()
 
