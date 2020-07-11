@@ -140,6 +140,9 @@ func main() {
 
 	fmt.Printf("server started...\n")
 	http.Handle("/metrics", promhttp.Handler())
+	http.HandleFunc("/status", func(w http.ResponseWriter, r *http.Request) {
+		_, _ = fmt.Fprintf(w, "UP\n")
+	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }
